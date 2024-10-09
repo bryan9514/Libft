@@ -1,47 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/09 13:53:27 by brturcio          #+#    #+#             */
-/*   Updated: 2024/10/09 15:15:33 by brturcio         ###   ########.fr       */
+/*   Created: 2024/10/09 16:13:43 by brturcio          #+#    #+#             */
+/*   Updated: 2024/10/09 16:51:58 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void *ft_memcpy(void *dest, const void *src, size_t n)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	char	*recet;
-	char	*emiso;
 	size_t	i;
+	size_t	j;
 
-	i = 0;
-	recet = (char*)dest;
-	emiso = (char*)src;
-	while (emiso[i] != '\0' && i < n)
+	j = 0;
+	while (dst[j] != '\0')
+		j++;
+	if (j < size)
 	{
-		recet[i] = emiso[i];
-		i++;
+		i = 0;
+		while (src[i] != '\0' && i < size -1)
+		{
+			dst[i] = src[i];
+			i++;
+		}
 	}
-	return (dest);
-
+	else
+	{
+		i = 0;
+		while (src[i] != '\0' && i < j-1)
+		{
+			dst[i] = src[i];
+			i++;
+		}
+	}
+	dst[i] = '\0';
+	return(j);
 }
-
 #include <stdio.h>
-#include <string.h>
 
 int	main(void)
 {
-	char	dest[100];
-	char	src[] = "Hello World";
-	size_t	n = 2;
+	char	dest[] = "nadaa";
+	char	src[] = "Hello";
+	size_t	n = 5;
 
-	ft_memcpy(dest, src, n);
-	printf("%s\n", dest);
-
-	// memcpy(dest, src, n);
-	// printf("%s\n", dest);
+	printf("%d\n",ft_strlcpy(dest, src, n));
 }
+

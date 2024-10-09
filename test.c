@@ -1,47 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/09 13:53:27 by brturcio          #+#    #+#             */
-/*   Updated: 2024/10/09 15:15:33 by brturcio         ###   ########.fr       */
+/*   Created: 2024/10/09 15:44:29 by brturcio          #+#    #+#             */
+/*   Updated: 2024/10/09 15:44:38 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-void *ft_memcpy(void *dest, const void *src, size_t n)
-{
-	char	*recet;
-	char	*emiso;
-	size_t	i;
-
-	i = 0;
-	recet = (char*)dest;
-	emiso = (char*)src;
-	while (emiso[i] != '\0' && i < n)
-	{
-		recet[i] = emiso[i];
-		i++;
-	}
-	return (dest);
-
-}
-
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
-int	main(void)
+int main(void)
 {
-	char	dest[100];
-	char	src[] = "Hello World";
-	size_t	n = 2;
-
-	ft_memcpy(dest, src, n);
-	printf("%s\n", dest);
-
-	// memcpy(dest, src, n);
-	// printf("%s\n", dest);
+        char *a,*b;
+        a=malloc(100*sizeof(char));
+        b=(a+25);
+        strcpy(a,"This is just a test");
+        strcpy(b,"And this is another test, longer test string.");
+        printf("a: %s\nb: %s\n",a,b);
+        printf("Now, I am copying b in a, and lets see what happen...\n");
+        memcpy(a,b,75);
+        printf("a: %s\nb: %s\n",a,b);
 }
