@@ -1,27 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/09 10:33:15 by brturcio          #+#    #+#             */
-/*   Updated: 2024/10/09 12:13:06 by brturcio         ###   ########.fr       */
+/*   Created: 2024/10/09 11:11:24 by brturcio          #+#    #+#             */
+/*   Updated: 2024/10/09 13:04:11 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	ft_isdigit(int x)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	if (x >= '0' && x <= '9')
-		return (1);
-	return (0);
+	size_t	i;
+	char	*str;
+
+	i = 0;
+	str = (char *)s;
+	while (i < n)
+	{
+		str[i] = (char)c;
+		i++;
+	}
+	return (s);
+}
+#include <string.h>
+
+int	main(void)
+{
+	char	str[100] = "Hello World";
+
+	printf("%s\n", memset(str + 2, 'c', 3));
+	printf("%s\n", ft_memset(str + 2, 'c', 3));
 }
 
-// int	main(void)
-// {
-// 	int x = '1';
-// 	printf("%d", ft_isdigit(x));
-// 	return (0);
-// }
