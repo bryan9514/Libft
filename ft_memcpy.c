@@ -6,11 +6,12 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 13:53:27 by brturcio          #+#    #+#             */
-/*   Updated: 2024/10/09 15:15:33 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/10/10 11:51:29 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <stdio.h>
+#include <string.h>
 
 void *ft_memcpy(void *dest, const void *src, size_t n)
 {
@@ -18,10 +19,12 @@ void *ft_memcpy(void *dest, const void *src, size_t n)
 	char	*emiso;
 	size_t	i;
 
-	i = 0;
+	if (!dest && !src )
+		return (NULL);
 	recet = (char*)dest;
 	emiso = (char*)src;
-	while (emiso[i] != '\0' && i < n)
+	i = 0;
+	while (i < n)
 	{
 		recet[i] = emiso[i];
 		i++;
@@ -30,18 +33,17 @@ void *ft_memcpy(void *dest, const void *src, size_t n)
 
 }
 
-#include <stdio.h>
-#include <string.h>
-
 int	main(void)
 {
 	char	dest[100];
 	char	src[] = "Hello World";
-	size_t	n = 2;
+	size_t	n = 11;
 
 	ft_memcpy(dest, src, n);
 	printf("%s\n", dest);
 
-	// memcpy(dest, src, n);
-	// printf("%s\n", dest);
+// 	memcpy(dest, src, n);
+// 	printf("%s\n", dest);
+
+
 }
