@@ -6,7 +6,7 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 12:30:53 by brturcio          #+#    #+#             */
-/*   Updated: 2024/10/14 13:02:25 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/10/14 18:13:01 by bt24             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,9 @@ int	ft_atoi(const char *nptr)
 }
 int	main(void)
 {
-	char	nptr[] = "  123";
+	char	nptr[] = "$100";
+
+
 
 	printf ("ft_atoi : %d\n", ft_atoi(nptr));
 	printf ("vrai atoi : %d\n", atoi(nptr));
