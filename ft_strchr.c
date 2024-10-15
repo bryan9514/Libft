@@ -6,33 +6,35 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 14:20:14 by brturcio          #+#    #+#             */
-/*   Updated: 2024/10/11 17:09:55 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/10/15 12:17:58 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include <stdio.h>
+#include <string.h>
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	int	i;
+
 	i = 0;
 	while (s[i] != '\0')
 	{
 		if (s[i] == (char)c)
-			return ((char*)&s[i]);
+			return ((char *)&s[i]);
 		i++;
 	}
 	if (c == '\0')
-		return ((char*)&s[i]);
-	return(NULL);
+		return ((char *)&s[i]);
+	return (NULL);
 }
 
-int	main(void)
-{
-	char	str[] = "Hello";
-	int	c = 'x';
+// int	main(void)
+// {
+// 	char	str[] = "Hello";
+// 	int		c;
 
-	printf("ft_strchr : %s\n", ft_strchr(str, c));
-	printf("vrai strchr : %s:\n", strchr(str, c));
-}
+// 	c = 'x';
+// 	printf("ft_strchr : %s\n", ft_strchr(str, c));
+// 	printf("vrai strchr : %s:\n", strchr(str, c));
+// }

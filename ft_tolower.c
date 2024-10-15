@@ -6,7 +6,7 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 14:51:18 by brturcio          #+#    #+#             */
-/*   Updated: 2024/10/10 14:56:09 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/10/15 12:18:51 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ int	ft_tolower(int c)
 		return (c + 32);
 	return (c);
 }
-int	main(void)
-{
-	int	c = 'Z';
+// int	main(void)
+// {
+// 	int	c;
 
-	printf("ft_tolower : %c\n", ft_tolower(c));
-	printf("tolower : %c\n", tolower(c));
-
-}
+// 	c = 'Z';
+// 	printf("ft_tolower : %c\n", ft_tolower(c));
+// 	printf("tolower : %c\n", tolower(c));
+// }

@@ -6,14 +6,12 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 16:13:43 by brturcio          #+#    #+#             */
-/*   Updated: 2024/10/10 14:12:59 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/10/15 12:18:14 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
-#include <stdio.h>
 #include <bsd/string.h>
+#include <stdio.h>
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
@@ -27,27 +25,24 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	if (size > 0)
 	{
 		i = 0;
-		while (src[i] != '\0' && i < size -1)
+		while (src[i] != '\0' && i < size - 1)
 		{
 			dst[i] = src[i];
 			i++;
 		}
 	}
 	dst[i] = '\0';
-	return(j);
+	return (j);
 }
 
+// int	main(void)
+// {
+// 	char	dest[] = "nadaa";
+// 	char	src[] = "Hello";
+// 	size_t	n;
 
-int	main(void)
-{
-	char	dest[] = "nadaa";
-	char	src[] = "Hello";
-	size_t	n = 5;
-
-	printf("ft_strlcpy: %zu\n", ft_strlcpy(dest, src, n));
-	printf("strlcpy: %zu\n", strlcpy(dest, src, n));
-
-	printf("Destino : %s\n", dest);
-
-}
-
+// 	n = 5;
+// 	printf("ft_strlcpy: %zu\n", ft_strlcpy(dest, src, n));
+// 	printf("strlcpy: %zu\n", strlcpy(dest, src, n));
+// 	printf("Destino : %s\n", dest);
+// }

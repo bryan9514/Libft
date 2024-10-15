@@ -6,10 +6,9 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 12:37:40 by brturcio          #+#    #+#             */
-/*   Updated: 2024/10/10 10:08:37 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/10/15 12:16:42 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include <stdio.h>
 #include <string.h>
@@ -20,7 +19,7 @@ void	ft_bzero(void *s, size_t n)
 	char	*str;
 
 	i = 0;
-	str = (char *) s;
+	str = (char *)s;
 	while (i < n)
 	{
 		str[i] = '\0';
@@ -28,15 +27,12 @@ void	ft_bzero(void *s, size_t n)
 	}
 }
 
+// int	main(void)
+// {
+// 	char	str[100] = "Hello World";
 
-int	main(void)
-{
-	char	str[100] = "Hello World";
-
-	ft_bzero(str + 5, 5);
-	printf("ft_bzero : %s\n", str);
-
-	// bzero(str + 5, 5);
-	// printf("vrai bzero : %s\n", str);
-
-}
+// 	ft_bzero(str + 5, 5);
+// 	printf("ft_bzero : %s\n", str);
+// 	// bzero(str + 5, 5);
+// 	// printf("vrai bzero : %s\n", str);
+// }
