@@ -6,7 +6,7 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 14:44:58 by brturcio          #+#    #+#             */
-/*   Updated: 2024/10/15 12:34:41 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/10/15 16:21:28 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,27 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char	*recet;
-	char	*emiso;
-	size_t	i;
+	int	i;
 
 	if (!dest && !src)
 		return (NULL);
-	recet = (char *)dest;
-	emiso = (char *)src;
-	if (src < dest)
+	if (dest > src)
 	{
-		i = n;
-		while (i-- > 0)
-			recet[i] = emiso[i];
+		i = (int)n - 1;
+		while (i >= 0)
+		{
+			*(char *)(dest + i) = *(char *)(src + i);
+			i--;
+		}
 	}
 	else
 	{
 		i = 0;
-		while (i++ < n)
-			recet[i] = emiso[i];
+		while (i < (int)n)
+		{
+			*(char *)(dest + i) = *(char *)(src + i);
+			i++;
+		}
 	}
 	return (dest);
 }

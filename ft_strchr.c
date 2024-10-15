@@ -6,7 +6,7 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 14:20:14 by brturcio          #+#    #+#             */
-/*   Updated: 2024/10/15 12:17:58 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/10/15 16:38:39 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,5 @@ char	*ft_strchr(const char *s, int c)
 
 // 	c = 'x';
 // 	printf("ft_strchr : %s\n", ft_strchr(str, c));
-// 	printf("vrai strchr : %s:\n", strchr(str, c));
+// 	printf("vrai strchr : %s\n", strchr(str, c));
 // }

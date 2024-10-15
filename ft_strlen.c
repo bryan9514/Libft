@@ -6,7 +6,7 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 10:59:17 by brturcio          #+#    #+#             */
-/*   Updated: 2024/10/15 12:18:17 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/10/15 14:47:15 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 int	ft_strlen(char *str)
 {
-	int	x;
+	int	i;
 
-	x = 0;
-	while (str[x] != '\0')
-		x++;
-	return (x);
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
 }
 
 // int	main(void)
