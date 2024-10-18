@@ -6,44 +6,45 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 10:45:58 by brturcio          #+#    #+#             */
-/*   Updated: 2024/10/15 12:26:46 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/10/17 17:58:19 by bt24             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 
-char	*ft_strstr(const char *haystack, const char *needle)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 	size_t	j;
 
 	i = 0;
-	if (needle[0] == '\0')
-		return ((char *)&haystack[i]);
-	while (haystack[i] != '\0')
+	if (little[i] == '\0')
+		return ((char *)&big[i]);
+	while ((big[i] != '\0') && i < len)
 	{
-		if (haystack[i] == needle[0])
+		if (big[i] == little[0])
 		{
 			j = 0;
-			while (needle[j] == haystack[i + j])
+			while ((big[i + j] == little[j]) && (i + j) < len)
 			{
+				if (little[j + 1] == '\0')
+					return ((char *)&big[i]);
 				j++;
-				if (needle[j] == '\0')
-					return ((char *)&haystack[i]);
 			}
 		}
 		i++;
 	}
-	return (0);
+	return (NULL);
 }
 
 // int	main(void)
 // {
 // 	char	str[] = "This is un test for to find";
-// 	char	find[] = "or";
+// 	char	find[] = "is";
+// 	size_t	n = 3;
 
-// 	printf("ft_strstr : %s\n", ft_strstr(str, find));
-// 	printf("vrai strstr : %s\n", strstr(str, find));
+// 	printf("ft_strnstr : %s\n", ft_strnstr(str, find, n));
+// 	// printf("vrai strnstr : %s\n", strnstr(str, find, n));
 // 	return (0);
 // }

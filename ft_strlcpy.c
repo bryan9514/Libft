@@ -6,7 +6,7 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 16:13:43 by brturcio          #+#    #+#             */
-/*   Updated: 2024/10/15 15:18:55 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/10/17 17:37:32 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	while (src[j] != '\0')
 		j++;
 	if (size == 0)
-		return (j); // esto me faltaba para una proteccion 
+		return (j);
 	if (size > 0)
 	{
 		i = 0;
