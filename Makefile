@@ -6,7 +6,7 @@
 #    By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/15 09:11:42 by brturcio          #+#    #+#              #
-#    Updated: 2024/10/17 08:12:17 by brturcio         ###   ########.fr        #
+#    Updated: 2024/10/18 09:11:02 by brturcio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,9 +41,5 @@ fclean : clean
 	$(RM) $(NAME)
 
 re : fclean all
-
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
-	gcc -nostartfiles -shared -o libft.so $(OBJ)
 
 .PHONY :  all clean fclean re
