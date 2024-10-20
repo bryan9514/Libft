@@ -6,10 +6,11 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 17:01:10 by brturcio          #+#    #+#             */
-/*   Updated: 2024/10/18 09:07:53 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/10/20 09:01:50 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <string.h>
 #include <stdlib.h>
 

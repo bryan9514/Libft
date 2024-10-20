@@ -6,14 +6,14 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 10:59:17 by brturcio          #+#    #+#             */
-/*   Updated: 2024/10/19 16:57:34 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/10/20 09:27:07 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "libft.h"
 
-int	ft_strlen(char *str)
+size_t		ft_strlen(const char *str)
 {
 	int	i;
 
