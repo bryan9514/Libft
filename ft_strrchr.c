@@ -6,7 +6,7 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 17:10:27 by brturcio          #+#    #+#             */
-/*   Updated: 2024/10/15 12:18:46 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/10/20 16:03:10 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,6 @@ char	*ft_strrchr(const char *s, int c)
 	i = 0;
 	while (s[i] != '\0')
 		i++;
-	if (c == '\0')
-		return ((char *)&s[i]);
-	i--;
 	while (i >= 0)
 	{
 		if (s[i] == (char)c)
