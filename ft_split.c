@@ -6,44 +6,45 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 10:03:30 by brturcio          #+#    #+#             */
-/*   Updated: 2024/10/23 14:35:06 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/10/25 16:32:27 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_count_words(char const *str, char c)
+static int	count_words(char const *str, char c)
 {
 	size_t	i;
 	size_t	is_word;
 	size_t	counter;
 
 	counter = 0;
-	is_word = 1;
+	is_word = 0;
 	i = 0;
 	while (str[i] != '\0')
 	{
 		if (str[i] != c)
 		{
-			if (is_word == 1)
+			if (is_word == 0)
 			{
 				counter++;
-				is_word = 0;
+				is_word = 1;
 			}
 		}
 		else
-			is_word = 1;
+			is_word = 0;
 		i++;
 	}
 	return (counter);
 }
-static	char	**ft_div_words(char** str, char const *s, char c)
+
+static void	**div_words(char **result, char const *str, char sep)
 {
 	size_t	i;
 	size_t	words;
 	size_t	len;
 	size_t	index;
-	char	**array;
+	
 
 	i = 0;
 	index = 0;
@@ -67,16 +68,18 @@ static	char	**ft_div_words(char** str, char const *s, char c)
 	return (array);
 }
 
-
 char	**ft_split(char const *s, char c)
 {
 	char	**array;
+	size_t		words;
 
+	if (!s)
+		return (NULL);
 	words = ft_count_words(s, c);
-	array = (char **)ft_calloc(words + 1, sizeof(char));
+	array = malloc(sizeof(char*) * (words + 1));
 	if (!array)
 		return (NULL);
-	ft_div_words (array, s, c);
+	div_words(array, s, c);
 	return (array);
 }
 

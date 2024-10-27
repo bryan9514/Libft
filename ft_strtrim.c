@@ -6,7 +6,7 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 16:19:02 by brturcio          #+#    #+#             */
-/*   Updated: 2024/10/23 09:55:44 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/10/24 18:42:52 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!set)
 		return (ft_strdup(s1));
 	i = 0;
-	while (s1[i] && ft_set(s1[i], set))
+	while (s1[i] != '\0')
+	{
+		if (!ft_set(s1[i], set))
+			break ;
 		i++;
-	j = ft_strlen(s1) - 1;
+	}
+	j = ft_strlen(s1);
 	while (j > i && ft_set(s1[j - 1], set))
 		j--;
 	str = malloc(sizeof(char) * ((j - i) + 1));
@@ -49,16 +53,16 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (str);
 }
 
-// #include <stdio.h>
-
 // int		main(void)
 // {
 // 	char	str[] = "this is un test, this is un test, this";
 // 	char	set[] = "this";
 // 	char	*result;
 
-// 	result = ft_strtrim (str, set);
-// 	printf ("ft_strtrim : %s\n", result);
-// 	free (result);
+// 	result = ft_strtrim(str, set);
+// 	printf("Cadena original: '%s'\n", str);
+// 	printf("Set: '%s'\n", set);
+// 	printf("Resultado: '%s'\n", result);
+// 	free(result);
 // 	return (0);
 // }
