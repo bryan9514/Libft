@@ -1,38 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/25 15:21:46 by brturcio          #+#    #+#             */
-/*   Updated: 2024/10/27 13:51:39 by brturcio         ###   ########.fr       */
+/*   Created: 2024/10/27 14:56:59 by brturcio          #+#    #+#             */
+/*   Updated: 2024/10/27 15:49:26 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
-{
-	int	i;
+// typedef struct s_list
+// {
+// 		void *content;
+// 		struct s_list *next;
+// }				t_list;
 
-	i = 0;
-	while (s[i] != '\0')
-	{
-		write(fd, &s[i], 1);
-		i++;
-	}
-	write(fd, "\n", 1);
+
+t_list	*ft_lstnew(void *content)
+{
+	content = NULL;
+	return (content);
 }
 
-// #include <stdio.h>
 
-// int		main(void)
-// {
-// 	char	str[] = "This is un test";
-// 	int		fd;
+#include <stdio.h>
+int main(void)
+{
+	t_list	*content = ft_lstnew(content);
 
-// 	fd = 1;
-// 	ft_putendl_fd (str, fd);
-// 	return (0);
-// }
+	// content
+	printf("%p\n", content);
+	return (0);
+}

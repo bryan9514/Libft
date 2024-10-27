@@ -6,7 +6,7 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 13:19:44 by brturcio          #+#    #+#             */
-/*   Updated: 2024/10/25 15:08:51 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/10/27 13:53:29 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	unsigned int 	i;
+	unsigned int	i;
 
 	i = 0;
 	while (s[i] != '\0')
