@@ -6,7 +6,7 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 15:21:46 by brturcio          #+#    #+#             */
-/*   Updated: 2024/10/27 13:51:39 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/10/28 21:38:10 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,8 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-	{
-		write(fd, &s[i], 1);
-		i++;
-	}
-	write(fd, "\n", 1);
+	ft_putstr_fd (s, fd);
+	ft_putchar_fd('\n', fd);
 }
 
 // #include <stdio.h>

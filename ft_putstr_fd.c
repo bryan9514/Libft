@@ -6,7 +6,7 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 15:13:44 by brturcio          #+#    #+#             */
-/*   Updated: 2024/10/27 13:51:44 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/10/28 21:36:36 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ void	ft_putstr_fd(char *s, int fd)
 	int	i;
 
 	i = 0;
-	while (s[i])
+	if (!s)
+		return ;
+	while (s[i] && fd >= 0)
 	{
 		write(fd, &s[i], 1);
 		i++;

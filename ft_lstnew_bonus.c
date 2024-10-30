@@ -6,7 +6,7 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 14:56:59 by brturcio          #+#    #+#             */
-/*   Updated: 2024/10/27 15:49:26 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/10/28 22:33:01 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,41 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	content = NULL;
-	return (content);
+	t_list	*cont;
+
+	cont = malloc(sizeof(t_list));
+	if(!cont)
+		return (NULL);
+	cont->content = content;
+	cont->next = NULL;
+	return (cont);
 }
 
 
+// #include <stdio.h>
+// int main(void)
+// {
+// 	t_list	*content;
+
+// 	content = NULL;
+// 	content = ft_lstnew(content);
+
+// 	printf("%p\n", content);
+// 	return (0);
+// }
 #include <stdio.h>
 int main(void)
 {
-	t_list	*content = ft_lstnew(content);
+    int value = 42;  // Valor de ejemplo para el contenido del nodo
+    t_list *content = ft_lstnew(&value);
 
-	// content
-	printf("%p\n", content);
-	return (0);
+    // Imprime la dirección de memoria del nodo y el valor del contenido
+    if (content)
+        printf("Nodo creado en %p con contenido %d\n", (void *)content, *(int *)(content->content));
+    else
+        printf("Error al crear el nodo.\n");
+
+    // Libera la memoria del nodo después de la prueba
+    free(content);
+    return (0);
 }
