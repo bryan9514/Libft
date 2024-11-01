@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/30 13:41:14 by brturcio          #+#    #+#             */
-/*   Updated: 2024/10/31 14:23:13 by brturcio         ###   ########.fr       */
+/*   Created: 2024/10/30 10:07:17 by brturcio          #+#    #+#             */
+/*   Updated: 2024/11/01 11:10:56 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,29 +36,29 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	*lst = new;       // `*lst` ahora apunta al nuevo nodo
 }
 
-#include <stdio.h>
+// #include <stdio.h>
 
-void	printList(t_list *head)
-{
-	while (head != NULL)
-	{
-		printf("odo creado en %p con contenido : %d\n", (void *)head,
-			*(int *)head->content);
-		head = head->next;
-	}
-}
-int	main(void)
-{
-	// int		p;
-	// int		n;
-	t_list	*header;
-	t_list	*second;
+// void	printList(t_list *head)
+// {
+// 	while (head != NULL)
+// 	{
+// 		printf("Nodo creado en %p con contenido : %d\n", (void *)head,
+// 			*(int *)head->content);
+// 		head = head->next;
+// 	}
+// }
+// int	main(void)
+// {
+// 	int		p;
+// 	int		n;
+// 	t_list	*header;
+// 	t_list	*second;
 
-	// n = 42;
-	// p = 50;
-	header = ft_lstnew(&p);
-	second = ft_lstnew(&n);
-	ft_lstadd_front(&header, second);
-	printList(header);
-	return (0);
-}
+// 	n = 42;
+// 	p = 50;
+// 	header = ft_lstnew(&p);
+// 	second = ft_lstnew(&n);
+// 	ft_lstadd_front(&header, second);
+// 	printList(header);
+// 	return (0);
+// }
