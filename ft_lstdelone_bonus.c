@@ -1,32 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/01 10:45:59 by brturcio          #+#    #+#             */
-/*   Updated: 2024/11/02 19:53:25 by bt24             ###   ########.fr       */
+/*   Created: 2024/11/02 23:50:41 by brturcio          #+#    #+#             */
+/*   Updated: 2024/11/02 23:59:44 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_lstsize(t_list *lst)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	int		i;
-	t_list 
-		
-
-
-
-	i = 0;
-	while (lst != NULL)
-	{
-		lst = lst->next;
-		i++;
-	}
-	return (i);
 
 }
 
@@ -34,21 +21,24 @@ int ft_lstsize(t_list *lst)
 
 int		main(void)
 {
-	int		n = 10;
-	int		p = 20;
+	int		a = 10;
+	int		b = 20;
 	int		c = 30;
-	t_list	*p1 = ft_lstnew(&n);
-	t_list	*p2 = ft_lstnew(&p);
+	t_list	*p1 = ft_lstnew(&a);
+	t_list	*p2 = ft_lstnew(&b);
 	t_list	*p3 = ft_lstnew(&c);
+	t_list	*head;
 
-	p1->next = p2;
-	p2->next = p3;
+	ft_lstadd_back(&p1, p2);
+	ft_lstadd_back(&p1, p3);
 
-
-	printf("The number of nodes are : %d\n", ft_lstsize(p1));
+	head = p1;
+	while (head != NULL)
+	{
+		printf("Nodo creado en %p con contenido : %d\n", (void*)head, *(inbt*)head->content);
+		head = head->next;
+	}
 	free(p1);
 	free(p2);
 	free(p3);
-	return (0);
-
 }

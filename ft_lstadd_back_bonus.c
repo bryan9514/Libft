@@ -6,12 +6,25 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 12:20:00 by brturcio          #+#    #+#             */
-/*   Updated: 2024/11/01 12:50:29 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/11/02 18:18:50 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Adds a new element at the end of the list.
+ *
+ * This function adds the node pointed to by 'new' to the end of the list
+ * pointed to by 'lst'. If the list is empty, the new node becomes the
+ * first node of the list.
+ *
+ * @param lst A pointer to the pointer to the first element of the list.
+ *            If the list is empty, this will be updated to point to the
+ *            new node.
+ * @param new The new node to be added to the list. This node's 'next'
+ *            pointer will be set to NULL if it becomes the last node.
+ */
 void ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*lastNode;
@@ -21,7 +34,7 @@ void ft_lstadd_back(t_list **lst, t_list *new)
 	else
 	{
 		lastNode = *lst;
-		while (lastNode->next != *lst)
+		while (lastNode->next != NULL)
 			lastNode = lastNode->next;
 		lastNode->next = new;
 	}
@@ -29,30 +42,29 @@ void ft_lstadd_back(t_list **lst, t_list *new)
 
 }
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int		main(void)
-{
-	int		a = 10;
-	int		b = 20;
-	int		c = 30;
-	t_list	*p1 = ft_lstnew(&a);
-	t_list	*p2 = ft_lstnew(&b);
-	t_list	*p3 = ft_lstnew(&c);
-	t_list	*head;
+// int		main(void)
+// {
+// 	int		a = 10;
+// 	int		b = 20;
+// 	int		c = 30;
+// 	t_list	*p1 = ft_lstnew(&a);
+// 	t_list	*p2 = ft_lstnew(&b);
+// 	t_list	*p3 = ft_lstnew(&c);
 
-	head = p1;
-	ft_lstadd_back(&p1, p2);
-	ft_lstadd_back(&p2, p3);
+// 	ft_lstadd_back(&p1, p2);
+// 	ft_lstadd_back(&p1, p3);
 
-	while (head != NULL)
-	{
-		printf("Nodo creado en %p con contenido : %d\n", (void *)head,
-			*(int *)head->content);
-		head = head->next;
-	}
-	free(p1);
-	free(p2);
-	free(p3);
-	return (0);
-}
+// 	t_list	*head = p1;
+// 	while (head != NULL)
+// 	{
+// 		printf("Nodo creado en %p con contenido : %d\n", (void *)head,
+// 			*(int *)head->content);
+// 		head = head->next;
+// 	}
+// 	free(p1);
+// 	free(p2);
+// 	free(p3);
+// 	return (0);
+// }
