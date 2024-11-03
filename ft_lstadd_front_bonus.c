@@ -6,7 +6,7 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 10:07:17 by brturcio          #+#    #+#             */
-/*   Updated: 2024/11/02 18:28:46 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/11/03 09:42:03 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@
  */
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (!lst || !new) // Verifica que los punteros no sean nulos
-		return ;
+	if (!*lst) // Verifica que los punteros no sean nulos
+		lst = &new;
 	new->next = *lst; // `new` apunta al nodo actual al inicio de la lista
 	*lst = new;       // `*lst` ahora apunta al nuevo nodo
 }
@@ -64,5 +64,8 @@ int		main(void)
         p1 = p1->next;   // Mueve el puntero al siguiente nodo
         free(tmp);       // Libera el nodo guardado
     }
+	// free(p1);
+	// free(p2);
+	// free(p3);
 	return (0);
 }
