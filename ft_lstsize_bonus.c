@@ -6,7 +6,7 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 10:45:59 by brturcio          #+#    #+#             */
-/*   Updated: 2024/11/02 19:53:25 by bt24             ###   ########.fr       */
+/*   Updated: 2024/11/03 19:00:31 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,13 @@
 int ft_lstsize(t_list *lst)
 {
 	int		i;
-	t_list 
-		
+	t_list	*tmp;
 
-
-
+	tmp = lst;
 	i = 0;
-	while (lst != NULL)
+	while (tmp != NULL)
 	{
-		lst = lst->next;
+		tmp = tmp->next;
 		i++;
 	}
 	return (i);

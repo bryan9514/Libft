@@ -6,7 +6,7 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 11:51:36 by brturcio          #+#    #+#             */
-/*   Updated: 2024/11/03 11:39:51 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/11/03 18:55:15 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,13 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+
+
+
+void				del(void *cont); /*a elimanr luego */
+
+
+
 
 int					ft_atoi(const char *nptr);
 void				ft_bzero(void *s, size_t n);

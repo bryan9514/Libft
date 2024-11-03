@@ -6,7 +6,7 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 23:50:41 by brturcio          #+#    #+#             */
-/*   Updated: 2024/11/03 11:36:22 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/11/03 19:09:07 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
  void		del(void *cont)
 {
-	int	*int_cont = (int*)cont;
-
-	*int_cont = 0;
-	// free(cont);
+	free(cont);
 }
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
