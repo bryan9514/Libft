@@ -6,20 +6,41 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 11:39:06 by brturcio          #+#    #+#             */
-/*   Updated: 2024/11/03 19:23:36 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/11/05 18:27:27 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		f(void *cont)
-{
-	int		*intCont = (int *)cont;
+// void		f(void *cont)
+// {
+// 	int		*intCont = (int *)cont;
 
-	*intCont = 0;
-}
+// 	*intCont = 0;
+// }
+/**
+ * @brief Applies a function to each element of a linked list.
+ *        Aplica una función a cada elemento de una lista enlazada.
+ *
+ * This function iterates over a linked list and applies the given function
+ * to the content of each node in the list.
+ * Esta función recorre una lista enlazada y aplica la función dada
+ * al contenido de cada nodo en la lista.
+ *
+ * @param lst Pointer to the first node of the list.
+ * @param f Pointer to the function to be applied to each node's content.
+ *          The function should accept a void pointer and return nothing.
+ *
+ * @note The function `f` should be designed to operate on the node's content
+ *       without freeing the node or its content, as `ft_lstiter` only applies
 
-void 	ft_lstiter(t_list *lst, void (*f)(void *))
+	*       the function and does not modify the list structure. La función `f`
+	debe
+ *       estar diseñada para operar sobre el contenido del nodo sin liberar el
+ *       nodo ni su contenido, ya que `ft_lstiter` solo aplica la función y no
+ *       modifica la estructura de la lista.
+ */
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	t_list	*tmp;
 
@@ -31,36 +52,26 @@ void 	ft_lstiter(t_list *lst, void (*f)(void *))
 	}
 }
 
-#include <stdio.h>
+// #include <stdio.h>
 
 // int main(void)
 // {
-//     // Asignación dinámica de los contenidos para cada nodo
-//     int *a = malloc(sizeof(int));
-//     int *b = malloc(sizeof(int));
-//     int *c = malloc(sizeof(int));
-//     if (!a || !b || !c)
-//     {
-//         printf("Error: No se pudo asignar memoria.\n");
-//         free(a);
-//         free(b);
-//         free(c);
-//         return (1);
-//     }
-//     *a = 10;
-//     *b = 20;
-//     *c = 30;
+//     // Declaración de los valores en el stack
+//     int a = 10;
+//     int b = 20;
+//     int c = 30;
 
-//     // Crear nodos con contenido dinámico
-//     t_list *p1 = ft_lstnew(a);
-//     t_list *p2 = ft_lstnew(b);
-//     t_list *p3 = ft_lstnew(c);
+//     // Crear nodos sin asignación dinámica para el contenido
+//     t_list *p1 = ft_lstnew(&a);
+//     t_list *p2 = ft_lstnew(&b);
+//     t_list *p3 = ft_lstnew(&c);
+
 //     if (!p1 || !p2 || !p3)
 //     {
 //         printf("Error: No se pudo asignar memoria para los nodos.\n");
-//         ft_lstdelone(p1, del);
-//         ft_lstdelone(p2, del);
-//         ft_lstdelone(p3, del);
+//         ft_lstdelone(p1, NULL);  // NULL como del, ya que no libera contenido
+//         ft_lstdelone(p2, NULL);
+//         ft_lstdelone(p3, NULL);
 //         return (1);
 //     }
 
@@ -68,53 +79,22 @@ void 	ft_lstiter(t_list *lst, void (*f)(void *))
 //     ft_lstadd_back(&p1, p2);
 //     ft_lstadd_back(&p1, p3);
 
-//     // Eliminar p3 y liberar su contenido
-//     ft_lstdelone(p3, del);
-//     p2->next = NULL;  // Apunta p2->next a NULL para evitar segmentación
+//     // Itinera en la lista y modifica el contenido a 0
+//     ft_lstiter(p1, f);
 
 //     // Imprimir los nodos restantes
 //     t_list *head = p1;
 //     while (head != NULL)
 //     {
-//         printf("Nodo creado en %p con contenido: %d\n", (void*)head, *(int*)head->content);
+//         printf("Nodo creado en %p con contenido: %d\n", (void*)head,
+	// *(int*)head->content);
 //         head = head->next;
 //     }
 
-//     // Liberar los nodos restantes (p1 y p2) y sus contenidos
-//     ft_lstdelone(p1, del);
-//     ft_lstdelone(p2, del);
-
+//     // Liberar solo los nodos,
+	// ya que el contenido no fue asignado dinámicamente
+// 	free(p1);
+// 	free(p2);
+// 	free(p3);
 //     return (0);
 // }
-int		main(void)
-{
-	int		a = 10;
-	int		b = 20;
-	int		c = 30;
-	t_list	*p1 = ft_lstnew(&a);
-	t_list	*p2 = ft_lstnew(&b);
-	t_list	*p3 = ft_lstnew(&c);
-	t_list	*head;
-
-	ft_lstadd_back(&p1, p2 );
-	ft_lstadd_back(&p1, p3 );
-
-	ft_lstiter(p1, f);
-
-	head = p1;
-	if (head != NULL)
-	{
-		while (head != NULL)
-		{
-			printf("Nodo creado en %p con contenido : %d\n ", (void*)head, *(int*)head->content);
-			head = head->next;
-		}
-	}
-	else
-		printf("Not List \n");
-	ft_lstdelone(p1, del);
-	ft_lstdelone(p2, del);
-	ft_lstdelone(p3, del);
-	return (0);
-
-}

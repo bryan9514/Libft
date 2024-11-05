@@ -6,11 +6,11 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 10:39:37 by brturcio          #+#    #+#             */
-/*   Updated: 2024/10/15 12:17:01 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/11/05 19:02:16 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_isalnum(int x)
 {
@@ -19,7 +19,7 @@ int	ft_isalnum(int x)
 		return (1);
 	return (0);
 }
-
+// #include <stdio.h>
 // int	main(void)
 // {
 // 	int	x;

@@ -6,12 +6,11 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 12:37:40 by brturcio          #+#    #+#             */
-/*   Updated: 2024/10/15 12:16:42 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/11/05 18:59:10 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
@@ -26,13 +25,3 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
-
-// int	main(void)
-// {
-// 	char	str[100] = "Hello World";
-
-// 	ft_bzero(str + 5, 5);
-// 	printf("ft_bzero : %s\n", str);
-// 	// bzero(str + 5, 5);
-// 	// printf("vrai bzero : %s\n", str);
-// }

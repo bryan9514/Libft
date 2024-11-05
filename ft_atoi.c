@@ -6,13 +6,11 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 12:30:53 by brturcio          #+#    #+#             */
-/*   Updated: 2024/10/15 14:20:54 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/11/05 18:54:52 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 int	ft_atoi(const char *nptr)
 {
@@ -40,11 +38,3 @@ int	ft_atoi(const char *nptr)
 	}
 	return (result * sing);
 }
-// int	main(void)
-// {
-// 	char	nptr[] = "$100";
-
-// 	printf("ft_atoi : %d\n", ft_atoi(nptr));
-// 	printf("vrai atoi : %d\n", atoi(nptr));
-// 	return (0);
-// }

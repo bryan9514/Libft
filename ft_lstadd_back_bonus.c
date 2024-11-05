@@ -6,7 +6,7 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 12:20:00 by brturcio          #+#    #+#             */
-/*   Updated: 2024/11/03 09:45:10 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/11/05 18:36:21 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,21 +25,19 @@
  * @param new The new node to be added to the list. This node's 'next'
  *            pointer will be set to NULL if it becomes the last node.
  */
-void ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*lastNode;
+	t_list	*last_node;
 
-	if(!*lst)
+	if (!*lst)
 		*lst = new;
 	else
 	{
-		lastNode = *lst;
-		while (lastNode->next != NULL)
-			lastNode = lastNode->next;
-		lastNode->next = new;
+		last_node = *lst;
+		while (last_node->next != NULL)
+			last_node = last_node->next;
+		last_node->next = new;
 	}
-
-
 }
 
 // #include <stdio.h>

@@ -6,7 +6,7 @@
 #    By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/15 09:11:42 by brturcio          #+#    #+#              #
-#    Updated: 2024/10/27 14:17:13 by brturcio         ###   ########.fr        #
+#    Updated: 2024/11/04 20:24:06 by brturcio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,10 @@ SRC = $(addsuffix .c, ft_atoi ft_bzero ft_calloc ft_strjoin ft_isalnum ft_isalph
 
 OBJ := $(SRC:%.c=%.o)
 
+BONUS = $(addsuffix .c, ft_lstadd_back_bonus ft_lstadd_front_bonus ft_lstclear_bonus ft_lstdelone_bonus \
+							ft_lstiter_bonus ft_lstlast_bonus ft_lstmap_bonus ft_lstnew_bonus ft_lstsize_bonus)
 
+BONUS_OBJ := $(BONUS:%.c=%.o)
 
 NAME = libft.a
 
@@ -39,11 +42,14 @@ $(NAME): $(OBJ)
 	$(CC) -c $(CCFLAGS) -c $< -o $@
 
 clean :
-	$(RM) $(OBJ)
+	$(RM) $(OBJ) $(BONUS_OBJ)
 
 fclean : clean
 	$(RM) $(NAME)
 
 re : fclean all
 
-.PHONY :  all clean fclean re
+bonus:  $(OBJ) $(BONUS_OBJ)
+	ar rcs $(NAME) $(OBJ) $(BONUS_OBJ)
+
+.PHONY :  all clean fclean re bonus

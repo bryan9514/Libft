@@ -6,7 +6,7 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 10:07:17 by brturcio          #+#    #+#             */
-/*   Updated: 2024/11/03 09:42:03 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/11/05 18:05:28 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,42 +30,42 @@
  */
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (!*lst) // Verifica que los punteros no sean nulos
+	if (!lst)
 		lst = &new;
-	new->next = *lst; // `new` apunta al nodo actual al inicio de la lista
-	*lst = new;       // `*lst` ahora apunta al nuevo nodo
+	new->next = *lst;
+	*lst = new;
 }
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int		main(void)
-{
-	int		a = 10;
-	int		b = 20;
-	int		c = 30;
-	t_list	*p1 = ft_lstnew(&a);
-	t_list	*p2 = ft_lstnew(&b);
-	t_list	*p3 = ft_lstnew(&c);
+// int		main(void)
+// {
+// 	int		a = 10;
+// 	int		b = 20;
+// 	int		c = 30;
+// 	t_list	*p1 = ft_lstnew(&a);
+// 	t_list	*p2 = ft_lstnew(&b);
+// 	t_list	*p3 = ft_lstnew(&c);
 
-	ft_lstadd_front(&p1, p2);
-	ft_lstadd_front(&p1, p3);
+// 	ft_lstadd_front(&p1, p2);
+// 	ft_lstadd_front(&p1, p3);
 
-	t_list	*head = p1;
-	while (head != NULL)
-	{
-		printf("Nodo creado en %p con contenido : %d\n", (void *)head,
-			*(int *)head->content);
-		head = head->next;
-	}
-	t_list *tmp;
-    while (p1 != NULL)
-    {
-        tmp = p1;         // Guarda el nodo actual
-        p1 = p1->next;   // Mueve el puntero al siguiente nodo
-        free(tmp);       // Libera el nodo guardado
-    }
-	// free(p1);
-	// free(p2);
-	// free(p3);
-	return (0);
-}
+// 	t_list	*head = p1;
+// 	while (head != NULL)
+// 	{
+// 		printf("Nodo creado en %p con contenido : %d\n", (void *)head,
+// 			*(int *)head->content);
+// 		head = head->next;
+// 	}
+// 	t_list *tmp;
+//     while (p1 != NULL)
+//     {
+//         tmp = p1;         // Guarda el nodo actual
+//         p1 = p1->next;   // Mueve el puntero al siguiente nodo
+//         free(tmp);       // Libera el nodo guardado
+//     }
+// 	// free(p1);
+// 	// free(p2);
+// 	// free(p3);
+// 	return (0);
+// }

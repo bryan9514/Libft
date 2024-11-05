@@ -6,13 +6,13 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 10:03:30 by brturcio          #+#    #+#             */
-/*   Updated: 2024/10/27 14:22:50 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/11/05 18:06:02 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_words(char const *str, char c)
+static size_t	count_words(char const *str, char c)
 {
 	size_t	i;
 	size_t	is_word;
@@ -38,51 +38,59 @@ static int	count_words(char const *str, char c)
 	return (counter);
 }
 
-static void	ft_free(char **result, int i)
+static void	*ft_free(char **result)
 {
-	while (i != 0)
-	{
-		free(result[i]);
-		i--;
-	}
-}
-
-static char	**div_words(char **result, char const *str, char sep)
-{
-	size_t	i;
-	size_t	words;
-	size_t	len;
-	size_t	index;
+	int	i;
 
 	i = 0;
-	index = 0;
-	words = count_words(str, sep);
-	while (i < words)
+	while (result[i])
 	{
-		len = 0;
-		while (str[index] == sep)
-			index++;
-		while (str[index + len] != sep)
-			len++;
-		result[i] = malloc(len + 1);
-		if (!result[i])
-		{
-			ft_free(result, i - 1);
-			return (NULL);
-		}
-		len = 0;
-		while (str[index] != sep)
-		{
-			result[i][len] = str[index];
-			len++;
-			index++;
-		}
-		index++;
-		if (i < words)
-			result[i][len] = '\0';
+		free(result[i]);
 		i++;
 	}
-	return (result);
+	free(result);
+	return (NULL);
+}
+
+static void	fill_result(char *new, char const *str, char c)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i] && str[i] != c)
+	{
+		new[i] = str[i];
+		i++;
+	}
+	new[i] = '\0';
+}
+
+static void	div_words(char **result, char const *str, char sep)
+{
+	size_t	i;
+	size_t	count;
+	size_t	j;
+
+	i = 0;
+	j = 0;
+	while (str[j])
+	{
+		count = 0;
+		while (str[j + count] && str[j + count] != sep)
+			count++;
+		if (count > 0)
+		{
+			result[i] = malloc(sizeof(char) * (count + 1));
+			if (!result[i])
+				(ft_free(result));
+			fill_result(result[i], (str + j), sep);
+			i++;
+			j = j + count;
+		}
+		else
+			j++;
+	}
+	result[i] = 0;
 }
 
 char	**ft_split(char const *s, char c)
@@ -100,25 +108,25 @@ char	**ft_split(char const *s, char c)
 	return (array);
 }
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int	main(void)
-{
-	char	str[] = "      split       this for   me  !       ";
-	char	c;
-	char	**result;
-	int		words;
-	int		i;
+// int	main(void)
+// {
+// 	char	str[] = "      split       this for   me  !       ";
+// 	char	c;
+// 	char	**result;
+// 	int		words;
+// 	int		i;
 
-	i = 0;
-	c = ' ';
-	words = count_words(str, c);
-	result = ft_split(str, c);
-	while (i < words)
-	{
-		printf("%s\n", result[i]);
-		i++;
-	}
-	free(result);
-	return (0);
-}
+// 	i = 0;
+// 	c = ' ';
+// 	words = count_words(str, c);
+// 	result = ft_split(str, c);
+// 	while (i < words)
+// 	{
+// 		printf("%s\n", result[i]);
+// 		i++;
+// 	}
+// 	free(result);
+// 	return (0);
+// }
