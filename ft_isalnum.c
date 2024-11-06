@@ -6,7 +6,7 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 10:39:37 by brturcio          #+#    #+#             */
-/*   Updated: 2024/11/05 19:02:16 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/11/06 15:05:47 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,3 @@ int	ft_isalnum(int x)
 		return (1);
 	return (0);
 }
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	int	x;
-
-// 	x = '+';
-// 	printf("%d", ft_isalnum(x));
-// 	return (0);
-// }

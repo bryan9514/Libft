@@ -6,12 +6,11 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 10:45:58 by brturcio          #+#    #+#             */
-/*   Updated: 2024/10/17 17:58:19 by bt24             ###   ########.fr       */
+/*   Updated: 2024/11/06 15:43:31 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
@@ -37,14 +36,3 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
-
-// int	main(void)
-// {
-// 	char	str[] = "This is un test for to find";
-// 	char	find[] = "is";
-// 	size_t	n = 3;
-
-// 	printf("ft_strnstr : %s\n", ft_strnstr(str, find, n));
-// 	// printf("vrai strnstr : %s\n", strnstr(str, find, n));
-// 	return (0);
-// }

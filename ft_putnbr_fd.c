@@ -6,7 +6,7 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 15:39:21 by brturcio          #+#    #+#             */
-/*   Updated: 2024/10/28 21:43:25 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/11/06 15:29:53 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,3 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putnbr_fd(n % 10, fd);
 	}
 }
-
-// #include <stdio.h>
-
-// int		main(void)
-// {
-// 	int n = 10;
-// 	int fd = 1;
-
-// 	ft_putnbr_fd(n, fd);
-// 	return (0);
-// }

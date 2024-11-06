@@ -6,12 +6,11 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 13:04:01 by brturcio          #+#    #+#             */
-/*   Updated: 2024/10/15 16:47:30 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/11/06 15:56:26 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <bsd/string.h>
-#include <stdio.h>
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
@@ -36,14 +35,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[j + i] = '\0';
 	return (j + p);
 }
-// int	main(void)
-// {
-// 	char	dest[100] = "Hello";
-// 	char	src[] = "World";
-// 	size_t	n;
-
-// 	n = 5;
-// 	printf("ft_strlcat : %zu\n", ft_strlcat(dest, src, n));
-// 	printf("vrai strlcat : %zu\n", strlcat(dest, src, n));
-// 	printf("Destino :  %s\n", dest);
-// }

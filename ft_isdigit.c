@@ -6,11 +6,11 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 10:33:15 by brturcio          #+#    #+#             */
-/*   Updated: 2024/10/15 12:17:08 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/11/06 15:11:14 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_isdigit(int x)
 {
@@ -18,10 +18,3 @@ int	ft_isdigit(int x)
 		return (1);
 	return (0);
 }
-
-// int	main(void)
-// {
-// 	int x = '1';
-// 	printf("%d", ft_isdigit(x));
-// 	return (0);
-// }

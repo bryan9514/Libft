@@ -6,12 +6,11 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 09:47:58 by brturcio          #+#    #+#             */
-/*   Updated: 2024/10/15 15:10:15 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/11/06 15:25:16 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
@@ -30,19 +29,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-
-// int	main(void)
-// {
-// 	char	s1[] = "Hell World";
-
-// 	char	s2[] = "Hell World";
-// 	// int a = -4555555; // para probar con otro tipo de dato
-// 	size_t n = 10;
-// 		// si quiero utilizar la talla ccorecta en int debo
-// 	//usar sizeof(a) para que calculero la talla correcta en byte
-// 	printf("ft_memcmp : %d\n", ft_memcmp(s1, s2, n));
-// 		// ejemplo de como tengo que enviar un int a la funcion
-// 	//si la funcion espera un puntero
-// 	printf("vrai memcmp : %d\n", memcmp(s1, s2, n));
-// 	return (0);
-// }

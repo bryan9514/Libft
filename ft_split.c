@@ -6,7 +6,7 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 10:03:30 by brturcio          #+#    #+#             */
-/*   Updated: 2024/11/05 18:06:02 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/11/06 15:34:00 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,26 +107,3 @@ char	**ft_split(char const *s, char c)
 	div_words(array, s, c);
 	return (array);
 }
-
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	char	str[] = "      split       this for   me  !       ";
-// 	char	c;
-// 	char	**result;
-// 	int		words;
-// 	int		i;
-
-// 	i = 0;
-// 	c = ' ';
-// 	words = count_words(str, c);
-// 	result = ft_split(str, c);
-// 	while (i < words)
-// 	{
-// 		printf("%s\n", result[i]);
-// 		i++;
-// 	}
-// 	free(result);
-// 	return (0);
-// }

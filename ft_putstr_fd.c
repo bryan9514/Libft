@@ -6,7 +6,7 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 15:13:44 by brturcio          #+#    #+#             */
-/*   Updated: 2024/10/28 21:36:36 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/11/06 15:30:20 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,3 @@ void	ft_putstr_fd(char *s, int fd)
 		i++;
 	}
 }
-// int		main(void)
-// {
-// 	char	str[] = "This is un test";
-// 	int		fd;
-
-// 	fd = 1;
-// 	ft_putstr_fd (str, fd);
-// 	return (0);
-// }

@@ -6,7 +6,7 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 16:19:02 by brturcio          #+#    #+#             */
-/*   Updated: 2024/10/24 18:42:52 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/11/06 15:44:37 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,17 +52,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ft_strlcpy(str, &s1[i], j - i + 1);
 	return (str);
 }
-
-// int		main(void)
-// {
-// 	char	str[] = "this is un test, this is un test, this";
-// 	char	set[] = "this";
-// 	char	*result;
-
-// 	result = ft_strtrim(str, set);
-// 	printf("Cadena original: '%s'\n", str);
-// 	printf("Set: '%s'\n", set);
-// 	printf("Resultado: '%s'\n", result);
-// 	free(result);
-// 	return (0);
-// }

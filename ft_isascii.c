@@ -6,11 +6,11 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 10:44:55 by brturcio          #+#    #+#             */
-/*   Updated: 2024/10/15 12:17:06 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/11/06 15:10:44 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_isascii(int x)
 {
@@ -18,9 +18,3 @@ int	ft_isascii(int x)
 		return (1);
 	return (0);
 }
-// int	main(void)
-// {
-// 	int x = 'A';
-// 	printf("%d", ft_isascii(x));
-// 	return (0);
-// }

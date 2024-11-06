@@ -6,13 +6,11 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 16:13:43 by brturcio          #+#    #+#             */
-/*   Updated: 2024/10/23 09:56:47 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/11/06 15:40:54 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <bsd/string.h>
-#include <stdio.h>
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
@@ -36,15 +34,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	dst[i] = '\0';
 	return (src_len);
 }
-
-// int	main(void)
-// {
-// 	char	dest[] = "nadaa";
-// 	char	src[] = "Hello";
-// 	size_t	n;
-
-// 	n = 5;
-// 	printf("ft_strlcpy: %zu\n", ft_strlcpy(dest, src, n));
-// 	printf("strlcpy: %zu\n", strlcpy(dest, src, n));
-// 	printf("Destino : %s\n", dest);
-// }
