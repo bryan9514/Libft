@@ -6,7 +6,7 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 10:03:30 by brturcio          #+#    #+#             */
-/*   Updated: 2024/11/06 15:34:00 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/11/07 22:36:34 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ static void	*ft_free(char **result)
 		i++;
 	}
 	free(result);
-	return (NULL);
 }
 
 static void	fill_result(char *new, char const *str, char c)
@@ -82,7 +81,7 @@ static void	div_words(char **result, char const *str, char sep)
 		{
 			result[i] = malloc(sizeof(char) * (count + 1));
 			if (!result[i])
-				(ft_free(result));
+				ft_free(result);
 			fill_result(result[i], (str + j), sep);
 			i++;
 			j = j + count;
