@@ -6,7 +6,7 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 13:27:25 by brturcio          #+#    #+#             */
-/*   Updated: 2024/11/07 22:25:16 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/11/09 09:12:35 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,24 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	char	*ptr;
-	size_t	i;
+	void	*ptr;
 	size_t	total_s;
 
+	if ((unsigned long long) nmemb * size > 4294967295)
+		return (NULL);
+	if (nmemb == 0 || size == 0)
+	{
+		ptr = malloc(0);
+		if (!ptr)
+			return (NULL);
+		return (ptr);
+	}
+	if ((long) nmemb < 0 || (long) size < 0)
+		return (NULL);
 	total_s = (nmemb * size);
 	ptr = malloc(total_s);
 	if (!ptr)
 		return (NULL);
-	i = 0;
-	while (i < total_s)
-	{
-		ptr[i] = '\0';
-		i++;
-	}
+	ft_bzero(ptr, total_s);
 	return (ptr);
 }

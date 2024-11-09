@@ -6,7 +6,7 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 10:03:30 by brturcio          #+#    #+#             */
-/*   Updated: 2024/11/07 22:36:34 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/11/09 12:20:33 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,17 +38,18 @@ static size_t	count_words(char const *str, char c)
 	return (counter);
 }
 
-static void	*ft_free(char **result)
+static int	ft_free(char **result, size_t index)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (result[i])
+	while (i < index)
 	{
 		free(result[i]);
 		i++;
 	}
 	free(result);
+	return (0);
 }
 
 static void	fill_result(char *new, char const *str, char c)
@@ -64,7 +65,7 @@ static void	fill_result(char *new, char const *str, char c)
 	new[i] = '\0';
 }
 
-static void	div_words(char **result, char const *str, char sep)
+static int	div_words(char **result, char const *str, char sep)
 {
 	size_t	i;
 	size_t	count;
@@ -81,7 +82,7 @@ static void	div_words(char **result, char const *str, char sep)
 		{
 			result[i] = malloc(sizeof(char) * (count + 1));
 			if (!result[i])
-				ft_free(result);
+				return (ft_free(result, i));
 			fill_result(result[i], (str + j), sep);
 			i++;
 			j = j + count;
@@ -90,6 +91,7 @@ static void	div_words(char **result, char const *str, char sep)
 			j++;
 	}
 	result[i] = 0;
+	return (1);
 }
 
 char	**ft_split(char const *s, char c)
@@ -103,6 +105,7 @@ char	**ft_split(char const *s, char c)
 	array = malloc(sizeof(char *) * (words + 1));
 	if (!array)
 		return (NULL);
-	div_words(array, s, c);
+	if (!div_words(array, s, c))
+		return (NULL);
 	return (array);
 }

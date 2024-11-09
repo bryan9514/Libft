@@ -6,7 +6,7 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 13:04:01 by brturcio          #+#    #+#             */
-/*   Updated: 2024/11/06 15:56:26 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/11/09 10:39:24 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 
 	j = 0;
 	p = 0;
+	if (size == 0)
+		return (ft_strlen(src));
 	while (dst[j] != '\0')
 		j++;
 	while (src[p] != '\0')

@@ -6,7 +6,7 @@
 /*   By: brturcio <brturcio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 10:45:58 by brturcio          #+#    #+#             */
-/*   Updated: 2024/11/06 15:43:31 by brturcio         ###   ########.fr       */
+/*   Updated: 2024/11/09 09:18:54 by brturcio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	j;
 
 	i = 0;
+	if (big == NULL && len == 0)
+		return (NULL);
 	if (little[i] == '\0')
 		return ((char *)&big[i]);
 	while ((big[i] != '\0') && i < len)
